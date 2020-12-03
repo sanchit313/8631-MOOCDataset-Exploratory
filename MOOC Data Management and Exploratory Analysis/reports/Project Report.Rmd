@@ -9,12 +9,113 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_knit$set(root.dir= normalizePath('..'))
 ```
+library(ProjectTemplate)
+load.project()
 
 ## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+##BUSINESS OBJECTIVES
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+We will be analysing a fast growing business application area called Learning
+Analytics. It is an application for Data Science, defined as “the measurement, 
+collection, analysis and reporting of data about learners and their contexts, 
+for purposes of understanding and optimizing learning and the environment in which it occurs”.
+
+In the existing scenario of recording student presence through their attendance,
+student's engagement outside of the classroom as in their
+home, libraries,Virtual viewing etc is not reflected. The objective of the 
+Learning Analytics organization is to analyse more student Data based on 
+various sources through which they access course work.
+
+Several different Sources of data are periodically collected about the 
+organizations learners like their use of on-campus facilities, Virtual Learning 
+Environment (VLE) and ReCap access, and student wellbeing referrals.
+
+The main objective of our organization 'Learning Analytics' is to aggregate 
+all the important sources of data to derive insights, provide the impactful
+measures of engagement.
+
+From analysing the above, there is scope of getting extremely useful information
+like:
+-how to better the design of learning
+-inform intervention processes for at-risk students
+-improving student attainment.
+
+The Success Criteria is the efficient access of data from all the
+sources without any loss, discrepancy, damage and quality of the student's data.
+Also, gathering the maximum data possible in all situations.
+
+For the entire task, we need to efficiently explore, analyse, assess, interpret,
+judge and find insights from the datasets that have been provided to us.
+
+
+#RESOURCES AVAILABLE
+We have been supplied with Data for the Cyber security course from future learn 
+course. Given Datasets of 7 batches of students, which enrolled in 
+a cyber security Future Learn course available online. The data covers various types of information
+such as:
+-The enrollments of students with student specific ID and the dates of enrolling and leaving
+-The types of students (by background), their surveys
+-The various countries from which students attended the course
+-The Video statistics based on the number of views of the available videos, 
+number of downloads, region wise viewing, percentage of completion etc.
+-Dates of completing different steps from the online course.
+
+There is another set of data that displays the user interface of the course.
+It is same for all 7 cohorts and shows us the all the steps that cover the whole 
+course with a step number and one-line description, that enrolled students require
+to complete.
+
+##RESOURCES REQUIRED
+
+For our end of the analysis, we require following available resources:
+1. A computer/laptop with R installed
+2. Software Tools: Rstudio with all the required packages and libraries.
+3. An official GIT hub account for acting as our project's repository.
+4. The Datasets in appropriate format (eg. csv files).
+5. The Interface summarizing the videos
+
+
+
+##ASSUMPTIONS
+
+We will make a set of assumptions based on our Application area and its
+Datasets as summarized below:
+
+1. The visual display of the interface for the cyber security course is totally
+same as the actual one and it shows all of the steps that are required for 
+course completion accurately.
+
+2. The Steps of the course are consistent throughout for all the 7 cohorts
+
+3. Some of the data sets are completely blank, we will assume that they fall under
+incomplete information provided, hence, can be discarded.
+
+4. We are assuming that all of the information is accurate, with minumum discrepancy 
+and gathered from reliable resources.
+
+##RISKS AND CONTINGENCIES
+
+Due to safety purposes, we pre-define possible risks :
+
+1. The data provided to us is from 2016 to 2018, there is a possibility of 
+it not being reliable based on the analysis we will carry out on it that will be used for future
+improvement of the course.
+
+2.Technological risks such as file corruption, data deletion, power outage and entire computer corruption
+
+3.Data quality can be extremely poor and render unreliable, the name of the files determine the sequence number of the cohort but the data within the files could be mismatched.
+
+
+##DATA MINING OBJECTIVE
+The data we have been given is in its raw form. We are supposed to analyse and interpret it to find useful information from it. Our main objectives of data mining from the given sets are:
+*
+
+
+
+
+
+
 
 ```{r cars}
 summary(cars)
