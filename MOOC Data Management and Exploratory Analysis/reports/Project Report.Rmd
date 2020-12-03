@@ -109,11 +109,48 @@ improvement of the course.
 
 ##DATA MINING OBJECTIVE
 The data we have been given is in its raw form. We are supposed to analyse and interpret it to find useful information from it. Our main objectives of data mining from the given sets are:
-*
+
+*Determine the number of enrollments in each cohorts and compare them with each other to get the basic idea of the average enrollments in a particular batch.
+
+*To find out the number of enrollments across each cohort for every country, this will help us determine the popular places where our course is in demand and we would need to allocate more resources and bandwidth for those places, as well as, focusing more on advertisements and publicizing in the places with higher potential of clients.
+
+*The files containing video statistics help us to find the correlation between the types of videos that each cohort watches the most, with their length of duration, total number of views and their downloads, can determine what if there is a relation among those variables, that can be used for analysis further to classify types of videos, make improvements, alter the length of duration, improve downloading methods. 
+
+*The Video statistics file consists of the information of the percentage of views across various devices, namely: console,	desktop,	mobile,	television,	tablet,	unknown devices. 
+We will use this data to determine the most widely used device, the least used device and if any devices faced issues, hence, planning our future courses to have more compatibility in certain devices and access to more devices if required.
 
 
+##PROJECT PLAN
+
+### An initial project plan is laid out as follows:
+
+-We will use Data analysis and documentation tools in our systems to first select the required data sheets, successfully load them and then perform exploratory analysis on them using R. It will be feasibly carried out using different R packages for reproducibility and also by using a code repository on several different systems.
+
+*We need to determine the number of enrollments across all of the 7 cohorts and get a basic estimate of the number,the number of enrollments across every country whose citizens have enrolled in it, draw inferences from the video statistics on what video is most played, downloaded etc and the various devices used for playing the videos.
+The above tasks will be performed using data analysis in R using several Packages for this purpose like plyr,countrycode,forcats,testthat,ggpubr, tidyverse,ggplot2 etc.
+
+*Our 40 percent of the time and effort is expected for Data Preparation Phase and 30 percent for the Data Understanding Phase,25 percent in each of the Modeling, Evaluation, and Business Understanding Phases and 5 percent in the the Deployment Phase.
+
+*Our decision will be based on the graphs and plots that we generate for our tasks and the mean and correlations between various video sets will provide us with analytical information to build decisions.
+
+*We need to constantly update our code repository (we are using GIT hub for this) after updating any files or codes in our project.
 
 
+#TECHNOLOGIES USED
+
+###We will work on the following technologies based on our requirements:
+
+####1)Microsoft Excel 
+It is best for when the first time we receive the data, we can get the sense of how much of data is provided to us and what is it basically about. The files we have been provided are in .csv format, for which Excel does a really great job in separating into columns and rows.
+
+###2)R
+R is a programming language and free software environment for statistical computing and graphics supported by the R Foundation for Statistical Computing. For our proper analysis of the data, a tool for stats and graphics will be best suited for us, also its convenient syntax, fast computations, several in-built functions will be supportive throughout our analysis.
+
+###3)Rstudio
+After having R in our system, we can use a good IDE (Integrated development environment) where R can be used even more efficiently and conveniently. Rstudio provides a wide number of benefits like
+making it easy to write scripts,set a directory and use files on the system, access objects more easily and graphics are easily accessible for a non technical person.
+
+###4)
 
 
 
