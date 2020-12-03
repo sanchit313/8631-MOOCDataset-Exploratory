@@ -197,6 +197,14 @@ Hence, on a random basis, we will stick to using the video.stats file for the 3r
 Using copy-paste, we will load our 7 enrolment files and1 cyber.security.3_video-stats  by saving them in the 'Data' Folder of our Project Template.
 
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir= normalizePath('..'))
+```
+
+```{r}
+
+```
 
 
 

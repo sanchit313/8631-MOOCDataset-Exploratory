@@ -1,5 +1,4 @@
-library('ProjectTemplate')
-load.project()
+
 #check the enrollments and video stats data
 head(cyber.security.1_enrolments)
 #file of video data
@@ -71,9 +70,5 @@ question.title.min=mainfile.row$title
 
 #scatter plot total views total downloads
 scatt.vid=ggplot(data=video.sets.counts) + geom_point(aes(x=total_views , y=total_downloads),color="red") + labs(title = "Cohort3 Video Stats : Downloads vs Views Scatter plot")
-
-
-
-
 
 

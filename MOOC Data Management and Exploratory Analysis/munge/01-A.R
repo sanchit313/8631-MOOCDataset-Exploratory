@@ -27,10 +27,7 @@ lid6=cyber.security.6_enrolments[[1]]
 lid7=cyber.security.7_enrolments[[1]]
 (country7=cyber.security.7_enrolments[[13]])
 
-#7 courses done at different times over  2016-08-10 to 2018-11-01 with different students
-h1=c(l1,l2,l3,l4,l5,l6,l7)
-counts <- table(mtcars$gear)
-?geom_bar
+
 
 #replace all of the learner IDs with the course set number the students took part in
 replacevals=function(lidnumber,j){
@@ -52,7 +49,7 @@ Set7=replacevals(lid7,7)
 
 #create data frame of combined Course sets
 Column_sets=c(Set1,Set2,Set3,Set4,Set5,Set6,Set7)
-class(df1$Column_sets)
+
 df1 <- data.frame(Column_sets)
 #Final Data Frame created to use for Analysis
 df1
@@ -77,7 +74,6 @@ country_count_function=function(country)
   
   #dplyr to set display count of each country
   count.countries=asda1 %>% count(value, sort = TRUE)
-  class(max.viewing.countries)
   count.countries
   #filter those with count greater than 20, our main concert
   max.viewing.countries=filter(count.countries, n >20 )
