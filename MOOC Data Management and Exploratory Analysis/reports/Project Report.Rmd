@@ -138,8 +138,11 @@ The above tasks will be performed using data analysis in R using several Package
 
 #TECHNOLOGIES USED
 
+All our tools used are free open-source, making them the best choice.
+
 ###We will work on the following technologies based on our requirements:
 
+All our tools used are free open-source, making them the best choice.
 ####1)Microsoft Excel 
 It is best for when the first time we receive the data, we can get the sense of how much of data is provided to us and what is it basically about. The files we have been provided are in .csv format, for which Excel does a really great job in separating into columns and rows.
 
@@ -150,7 +153,51 @@ R is a programming language and free software environment for statistical comput
 After having R in our system, we can use a good IDE (Integrated development environment) where R can be used even more efficiently and conveniently. Rstudio provides a wide number of benefits like
 making it easy to write scripts,set a directory and use files on the system, access objects more easily and graphics are easily accessible for a non technical person.
 
-###4)
+###4)Project Template
+We are following a CRISP-DM approach for this project, the best way will be to use the 'projectTemplate' template that can be integrated with Rstudio. The project standardization and code reproducibility is a necessity for our project, we need it to run across several systems.
+
+###5)GIT Repository
+Git is a distributed version-control system for tracking changes in any set of files. Its goals include speed, data integrity, and support for distributed, non-linear workflows.
+Our Project Template has a version control feature that lets us create an entire project associated to our account in GIT. The code repository can be updated through our RStudio for any changes we make in our code and files in our Project. It is important for us to use as we want a reproducible project and the repository is a safe zone for our code in case of any system risks.
+
+###6)R Packages
+We will be using several R packages/Libraries namely: reshape2, plyr,countrycode,forcats,testthat,ggpubr, tidyverse, stringr, lubridate, tidyverse, dplyr, ggplot2.
+We need to filter our datasets, sanity test, create graphics/plots/charts, determine countries from country codes. The named packages above will provide us with all the required functionality.
+
+###7)Rmarkdown
+Our Project Report is made on another feature in Rstudio i.e. Rmarkdown. It creates an interactive project report and we can directly get the output, code etc from our scripts and add use them as input in our Rmarkdown file. For our requirement of creating a reproducible project, this is one of the best approach as we can run the project code several times and the Rmarkdown report file gets updated. For example, changing the type of plot in our script will be reflected in our new Rmarkdown file.
+
+###8)Microsoft PowerPoint
+To make a final presentation for our client to summarize what we have majorly done and how it can be reproduced efficiently, we will use Microsoft Powerpoint for creating slides as a means of explanation
+
+###9) Adobe Acrobat
+We have 7 datasets that show the interface of the online learning and all the steps of the course are summarized in it. It is in PDF format, hence, best way to open them is using Acrobat.
+
+
+##DATA UNDERSTANDING
+
+### Collect initial data
+There is a total of 61 Files provided to us. We examined each file by manually opening them and doing our first bit of analysis.
+The data is for students who had enrolled in the cybersecurity program from the date 2016-08-10 till 2018-11-01. There had been 7 cohorts who enrolled for the same Course. Hence, we have datasets of 7 cohorts with different information.
+There are around 8 files for each cohort, named like:
+Enrolments
+archetype- survey responses
+weekly-sentiment-survey-responses
+team-members
+step-activity
+question-response
+video.stats
+leaving-survey-responses names for each cohort
+
+For our analysis, we have identified the Enrolments files and video.stats files to be used.
+As defined earlier, our goal for counting number of enrollments across 7 cohorts and identifying the countries, we will need the Enrolments file for each cohort.
+For our task of assessing videos viewership, we will use 1 of the video stats file i.e. for the 3rd cohort We manually observed that the Video statistics for the first 2 cohorts are unavailable, and as for the remaining 5, the data is nearly the same for all cohorts.
+Hence, on a random basis, we will stick to using the video.stats file for the 3rd Cohort.
+
+Using copy-paste, we will load our 7 enrolment files and1 cyber.security.3_video-stats  by saving them in the 'Data' Folder of our Project Template.
+
+
+
 
 
 
