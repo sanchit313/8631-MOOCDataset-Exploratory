@@ -6,10 +6,8 @@ head(cyber.security.1_enrolments)
 head(cyber.security.3_video.stats)
 # we will create 1 table from the 7 'cyber-security-i_enrolments' files
 #we will create 2nd table from 5 'video.stats' files
-
 cyber.security.3_video.stats[c(1,2,3)][]
-class(cyber.security.1_enrolments)
-is.list(cyber.security.1_enrolments)
+
 
 #extract learnerIDs and country for all 7 files
 lid1=cyber.security.1_enrolments[[1]]

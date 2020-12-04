@@ -9,9 +9,8 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_knit$set(root.dir= normalizePath('..'))
 ```
-library(ProjectTemplate)
-load.project()
-```{r}
+
+```{r, include=FALSE}
 library(ProjectTemplate)
 load.project()
 ```
@@ -230,6 +229,61 @@ For doing some basic exploration for our data, we will calculate the number of r
 c=c(nrow(cyber.security.1_enrolments),nrow(cyber.security.2_enrolments),nrow(cyber.security.3_enrolments),nrow(cyber.security.4_enrolments),nrow(cyber.security.5_enrolments),nrow(cyber.security.6_enrolments),nrow(cyber.security.7_enrolments))
 c
 ```
+The first cohort has a large number of enrollments, whereas the second has around 6000 enrollments, but the remaining 5 have even half of that.
+We find out that the enrollments are not consistent for all the 7 cohorts.
+
+Calculating the Rows for the video stats file
+```{r}
+nrow(cyber.security.3_video.stats)
+```
+There are 13 rows for each column. This tells us that there are 13 different videos at different steps throughout the complete course for which we have the data.
+
+###DATA QUALITY
+For the Data files we have selected , we want to check the quality of the data and verify that it is appropriate for the type of analysis we will perform.
+Checking the type of the data in each columns for any of the enrolments file:
+```{r echo=FALSE}
+typeall.enroll2=c()
+for(i in 1:13){
+typeall.enroll1=class(cyber.security.1_enrolments[,i])
+typeall.enroll2=c(typeall.enroll1,typeall.enroll2)
+}
+typeall.enroll2
+```
+From our output, we observe that we have dataframes, tbl format. They can be used to convert into apprpriate tables and used conveniently for our analysis. As we know, the cell values would be in various formats, like characters, dates, integers etc.
+
+Checking the type of data for cell values in video.sets for the 1st row of data
+```{r echo=FALSE}
+typeall.video=c()
+for(i in 1:28){
+typeall.video1=class(cyber.security.3_video.stats[[2,i]])
+typeall.video=c(typeall.video,typeall.video1)
+}
+typeall.video
+```
+From the above, we conclude that the column values are in appropriate format,i.e integer or numeric, to carry out our analysis.Also, the video name is in character format, as expected.
+
+We will check for any null values in the video sets, and in the detected_country column for any one of the enrolment set.
+```{r echo=FALSE}
+T1=(apply(cyber.security.3_video.stats, 2, function(x) any(is.na(x))))
+null1=length(T1[T1== TRUE])
+null1
+print("There is no NULL in video sets")
+
+T2=is.na(cyber.security.1_enrolments$detected_country)
+null2=length(T2[T2== TRUE])
+null2
+print("There are 11 NULL in enrolment data")
+
+```
+We will ignore the NULL in the countries as compared to over 3000 enrollments in each set, they will have negligible impact.
+
+The data quality for our datasets is good for our analysis.
+
+
+## DATA PREPARATION
+
+
+
 
 
 
