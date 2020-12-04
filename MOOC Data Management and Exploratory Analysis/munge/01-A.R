@@ -84,5 +84,8 @@ country_count_function=function(country)
 first_cohort=country_count_function(country1)
 second_cohort=country_count_function(country2)
 third_cohort=country_count_function(country3)
-
+fourth_cohort=country_count_function(country4)
+fifth_cohort=country_count_function(country5)
+sixth_cohort=country_count_function(country6)
+seventh_cohort=country_count_function(country7)
 

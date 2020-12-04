@@ -13,6 +13,7 @@ knitr::opts_knit$set(root.dir= normalizePath('..'))
 ```{r, include=FALSE}
 library(ProjectTemplate)
 load.project()
+source("src/eda.R")
 ```
 
 ## R Markdown
@@ -330,26 +331,100 @@ Using column means to detect the different percentages
 
 
 ### MODEL1
+#### BAR chart for our analysis
+```{r,fig.align='center', echo=FALSE}
+knitr::opts_chunk$set(fig.align = 'left')
+gcohorts
+```
+The model above is a simple bar chart for our 7 cohorts with heights as the count of the enrollment per cohort and the X axis is the Cohort Number. Different colors are used to create distinction.
+
+This shows us the number of enrollments in the first cohort were extremely massive (almost 15000) as compared to the other cohorts.
+The second had around 6000, whereas the other 5 cohorts had a similar enrollment of about 3000 students.
+
+This model satisfies our data mining task to compare the various strengths in the cohorts.
 
 
+### MODEL2
+
+Verified the number of distinct countries in each cohort that have only those countries that are enrollments of more than 20 learners.
+
+```{r echo=FALSE}
+(uniquec1=count(unique(first_cohort)))
+(uniquec2=count(unique(second_cohort)))
+(uniquec3=count(unique(third_cohort)))
+(uniquec4=count(unique(fourth_cohort)))
+(uniquec5=count(unique(fifth_cohort)))
+(uniquec6=count(unique(sixth_cohort)))
+(uniquec7=count(unique(seventh_cohort)))
+
+```
+The number of countries for each is similar, we will visualize using the list of countries from the first 3 cohorts.
+### Inverted BAR chart
+
+```{r,fig.align='center', echo=FALSE}
+Final_gg_country
+```
+This model displays us the range of various number of enrollment based on the country. Using colors, the distinction is quite easily visible even for the countries with similar enrollment number. 
+It is an essential model based on demographics that can be analytically used for making decisions.
 
 
+### MODEL3
+
+### Pair wise plot of all the variables for the 13 video steps
 
 
+```{r,fig.align='center',fig.height=6, echo=FALSE}
+pairs(video.sets)
+```
+
+A pairs plot is generated, it shows the relation between our variables video duration, total views, total downloads, total caption views and total transcript views.
+As we expect, there is a linear relation between many variables such as total downloads and total views, total transcript views and total downloads.
+
+Analysing the same set of data. We find the Means of all the variables for each video, but without the video lengths.
+```{r echo=FALSE}
+m1.view
+```
+
+Generating a correlation matrix:
+
+```{r echo=FALSE}
+cor1.view
+```
+
+The above models give us enough information on the variables and their relationship to each other and the different types of videos.
+
+Further, finding the video with maximum views and minimum views by their title names.
+```{r echo=FALSE}
+question.title.max
+question.title.min
+```
+The above results will help us analyse what types of videos are most preferred by students
+
+
+#### Scatter-Plot graph of Total views vs Total Downloads
+```{r,fig.align='center',fig.height=6, echo=FALSE}
+scatt.vid
+```
+The above plot is to reflect on the linear relationship of the number of views and number of downloads for the videos from each step.
+
+
+### MODEL4
+
+Our video stats file will be used for analysing the viewership across different devices namely
+```{r echo=FALSE}
+ch1.devices
+```
+We find out the means for each of the device
 ```{r}
-
+means.devices
 ```
+We use these as a measure to determine which of the devices should be focused on and which ones can be completely neglected.
 
 
 
 
 
-## Including Plots
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
