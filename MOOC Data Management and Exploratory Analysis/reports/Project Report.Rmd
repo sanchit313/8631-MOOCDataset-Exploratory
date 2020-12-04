@@ -1,7 +1,7 @@
 ---
 title: "Project Report for Data Exploration and Analysis of MOOC Dataset"
 author: "Sanchit Bhatnagar"
-date: "03/12/2020"
+date: "04/12/2020"
 output: pdf_document
 ---
 
@@ -16,8 +16,6 @@ load.project()
 source("src/eda.R")
 ```
 
-## R Markdown
-
 ## BUSINESS OBJECTIVES
 
 We will be analysing a fast growing business application area called Learning
@@ -29,100 +27,77 @@ In the existing scenario of recording student presence through their attendance,
 student's engagement outside of the classroom as in their
 home, libraries,Virtual viewing etc is not reflected. The objective of the 
 Learning Analytics organization is to analyse more student Data based on 
-various sources through which they access course work.
-
-Several different Sources of data are periodically collected about the 
-organizations learners like their use of on-campus facilities, Virtual Learning 
-Environment (VLE) and ReCap access, and student wellbeing referrals.
-
+various sources through which they access course work. Several different Sources of data are periodically collected about the organizations learners like their use of on-campus facilities, Virtual Learning Environment (VLE) and ReCap access, and student wellbeing referrals.
 The main objective of our organization 'Learning Analytics' is to aggregate 
 all the important sources of data to derive insights, provide the impactful
 measures of engagement.
 
 From analysing the above, there is scope of getting extremely useful information
 like:
--how to better the design of learning
--inform intervention processes for at-risk students
+-how to better the design of learning \
+-inform intervention processes for at-risk students \
 -improving student attainment.
 
 The Success Criteria is the efficient access of data from all the
 sources without any loss, discrepancy, damage and quality of the student's data.
-Also, gathering the maximum data possible in all situations.
-
-For the entire task, we need to efficiently explore, analyse, assess, interpret,
-judge and find insights from the datasets that have been provided to us.
+Also, gathering the maximum data possible in all situations.For the entire task, we need to efficiently explore, analyse, assess, interpret, judge and find insights from the datasets that have been provided to us.
 
 
-# RESOURCES AVAILABLE
+## RESOURCES AVAILABLE
 We have been supplied with Data for the Cyber security course from future learn 
 course. Given Datasets of 7 batches of students, which enrolled in 
-a cyber security Future Learn course available online. The data covers various types of information
-such as:
--The enrollments of students with student specific ID and the dates of enrolling and leaving
--The types of students (by background), their surveys
--The various countries from which students attended the course
+a cyber security Future Learn course available online. The data covers various types of information such as: \
+-The enrollments of students with student specific ID and the dates of enrolling and leaving. \
+-The types of students (by background), their surveys. \
+-The various countries from which students attended the course. \
 -The Video statistics based on the number of views of the available videos, 
-number of downloads, region wise viewing, percentage of completion etc.
--Dates of completing different steps from the online course.
+number of downloads, region wise viewing, percentage of completion etc. \
+-Dates of completing different steps from the online course. \
 
-There is another set of data that displays the user interface of the course.
+There is another set of data (pdf Format) that displays the user interface of the course.
 It is same for all 7 cohorts and shows us the all the steps that cover the whole 
 course with a step number and one-line description, that enrolled students require
 to complete.
 
 ## RESOURCES REQUIRED
 
-For our end of the analysis, we require following available resources:
-1. A computer/laptop with R installed
-2. Software Tools: Rstudio with all the required packages and libraries.
-3. An official GIT hub account for acting as our project's repository.
-4. The Datasets in appropriate format (eg. csv files).
-5. The Interface summarizing the videos
-
+For our end of the analysis, we require following available resources:\
+1. A computer/laptop with R installed. \
+2. Software Tools: Rstudio with all the required packages and libraries. \
+3. An official GIT hub account for acting as our project's repository. \
+4. The Datasets in appropriate format (eg. csv files). \
+5. The Interface summarizing the videos. \
 
 
 ## ASSUMPTIONS
 
-A set of assumptions based on our Application area and its
-Datasets as summarized below:
+A set of assumptions based on our Application area and its Datasets as summarized below:
 
-1. The visual display of the interface for the cyber security course is totally
-same as the actual one and it shows all of the steps that are required for 
-course completion accurately.
-
-2. The Steps of the course are consistent throughout for all the 7 cohorts
-
+1. The visual display (as in PDFs) of the interface for the cyber security course is totally same as the actual one and it shows all of the steps that are required for 
+course completion accurately. \
+2. The Steps of the course are consistent throughout for all the 7 cohorts. \
 3. Some of the data sets are completely blank, we will assume that they fall under
-incomplete information provided, hence, can be discarded.
-
+incomplete information provided, hence, can be discarded.\
 4. We are assuming that all of the information is accurate, with minumum discrepancy 
-and gathered from reliable resources.
-
-5. The length unit of the videos is not explicitly mentioned in the video sets, we will take them as minutes.
+and gathered from reliable resources.\
+5. The length unit of the videos is not explicitly mentioned in the video sets, we will take them as minutes. \
 
 ## RISKS AND CONTINGENCIES
 
 Due to safety purposes, we pre-define possible risks :
 
-1. The data provided to us is from 2016 to 2018, there is a possibility of 
-it not being reliable based on the analysis we will carry out on it that will be used for future
-improvement of the course.
-
-2.Technological risks such as file corruption, data deletion, power outage and entire computer corruption
-
-3.Data quality can be extremely poor and render unreliable, the name of the files determine the sequence number of the cohort but the data within the files could be mismatched.
+1. The data provided to us is from 2016 to 2018, there is a possibility of it not being reliable based on the analysis we will carry out on it that will be used for future improvement of the course. \
+2.Technological risks such as file corruption, data deletion, power outage and entire computer corruption. \
+3.Data quality can be extremely poor and render unreliable, the name of the files determine the sequence number of the cohort but the data within the files could be mismatched. \
 
 
 ## DATA MINING OBJECTIVE
 The data we have been given is in its raw form. We are supposed to analyse and interpret it to find useful information from it. Our main objectives of data mining from the given sets are:
 
-*Determine the number of enrollments in each cohorts and compare them with each other to get the basic idea of the average enrollments in a particular batch.
-
-*To find out the number of enrollments across each cohort for every country, this will help us determine the popular places where our course is in demand and we would need to allocate more resources and bandwidth for those places, as well as, focusing more on advertisements and publicizing in the places with higher potential of clients.
-
-*The files containing video statistics help us to find the correlation between the types of videos that each cohort watches the most, with their length of duration, total number of views and their downloads, can determine what if there is a relation among those variables, that can be used for analysis further to classify types of videos, make improvements, alter the length of duration, improve downloading methods. 
-
-*The Video statistics file consists of the information of the percentage of views across various devices, namely: console,	desktop,	mobile,	television,	tablet,	unknown devices. 
+* Determine the number of enrollments in each cohorts and compare them with each other to get the basic idea of the average enrollments in a particular batch.
+* To find out the number of enrollments across each cohort for every country, this will help us determine the popular places where our course is in demand and we would need to allocate more resources and bandwidth for those places, as well as, focusing more on advertisements and publicizing in the places with higher potential of clients.
+* The files containing video statistics help us to find the correlation between the types of videos that each cohort watches the most, with their length of duration, total number of views and their downloads, can determine what if there is a relation among those variables, that can be used for analysis further to classify types of videos, make improvements, alter the length of duration, improve downloading methods. 
+* The Video statistics file consists of the information of the percentage of views across various devices, namely: console,	desktop,	mobile,	television,	tablet,	unknown devices. 
 We will use this data to determine the most widely used device, the least used device and if any devices faced issues, hence, planning our future courses to have more compatibility in certain devices and access to more devices if required.
 
 
@@ -130,22 +105,17 @@ We will use this data to determine the most widely used device, the least used d
 
 ### An initial project plan is laid out as follows:
 
--We will use Data analysis and documentation tools in our systems to first select the required data sheets, successfully load them and then perform exploratory analysis on them using R. It will be feasibly carried out using different R packages for reproducibility and also by using a code repository on several different systems.
-
-*We need to determine the number of enrollments across all of the 7 cohorts and get a basic estimate of the number,the number of enrollments across every country whose citizens have enrolled in it, draw inferences from the video statistics on what video is most played, downloaded etc and the various devices used for playing the videos.
+* We will use Data analysis and documentation tools in our systems to first select the required data sheets, successfully load them and then perform exploratory analysis on them using R. It will be feasibly carried out using different R packages for reproducibility and also by using a code repository on several different systems.
+* We need to determine the number of enrollments across all of the 7 cohorts and get a basic estimate of the number,the number of enrollments across every country whose citizens have enrolled in it, draw inferences from the video statistics on what video is most played, downloaded etc and the various devices used for playing the videos.
 The above tasks will be performed using data analysis in R using several Packages for this purpose like plyr,countrycode,forcats,testthat,ggpubr, tidyverse,ggplot2 etc.
-
-*Our 40 percent of the time and effort is expected for Data Preparation Phase and 30 percent for the Data Understanding Phase,25 percent in each of the Modeling, Evaluation, and Business Understanding Phases and 5 percent in the the Deployment Phase.
-
-*Our decision will be based on the graphs and plots that we generate for our tasks and the mean and correlations between various video sets will provide us with analytical information to build decisions.
-
-*We need to constantly update our code repository (we are using GIT hub for this) after updating any files or codes in our project.
+* Our 40 percent of the time and effort is expected for Data Preparation Phase and 30 percent for the Data Understanding Phase,25 percent in each of the Modeling, Evaluation, and Business Understanding Phases and 5 percent in the the Deployment Phase.
+* Our decision will be based on the graphs and plots that we generate for our tasks and the mean and correlations between various video sets will provide us with analytical information to build decisions.
+* We need to constantly update our code repository (we are using GIT hub for this) after updating any files or codes in our project.
 
 
-# TECHNOLOGIES USED
+## TECHNOLOGIES USED
 
-All our tools used are free open-source, making them the best choice.
-
+All our tools used are free open-source, making them the best choice. \
 ### We will work on the following technologies based on our requirements:
 
 All our tools used are free open-source, making them the best choice.
@@ -184,17 +154,16 @@ We have 7 datasets that show the interface of the online learning and all the st
 ## DATA UNDERSTANDING
 
 #### Collect initial data
-There is a total of 61 Files provided to us. We examined each file by manually opening them and doing our first bit of analysis.
-The data is for students who had enrolled in the cybersecurity program from the date 2016-08-10 till 2018-11-01. There had been 7 cohorts who enrolled for the same Course. Hence, we have datasets of 7 cohorts with different information.
-There are around 8 files for each cohort, named like:
-Enrolments
-archetype- survey responses
-weekly-sentiment-survey-responses
-team-members
-step-activity
-question-response
-video.stats
-leaving-survey-responses names for each cohort
+There is a total of 61 Files provided to us. We examined each file by manually opening them and doing our first bit of analysis. The data is for students who had enrolled in the cybersecurity program from the date 2016-08-10 till 2018-11-01. There had been 7 cohorts who enrolled for the same Course. Hence, we have datasets of 7 cohorts with different information. \
+There are around 8 files for each cohort, named: \
+Enrolments \
+archetype- survey responses \
+weekly-sentiment-survey-responses \
+team-members \
+step-activity \
+question-response \
+video.stats \
+leaving-survey-responses names for each cohort \
 
 For our analysis, we have identified the Enrolments files and video.stats files to be used.
 As defined earlier, our goal for counting number of enrollments across 7 cohorts and identifying the countries, we will need the Enrolments file for each cohort.
@@ -228,6 +197,7 @@ Our interest is in the relation of the types of video and their lengths compared
 
 
 #### EXPLORE DATA
+
 For doing some basic exploration for our data, we calculate the number of rows in all our enrollment files.
 ```{r}
 c=c(nrow(cyber.security.1_enrolments),nrow(cyber.security.2_enrolments),nrow(cyber.security.3_enrolments),nrow(cyber.security.4_enrolments),nrow(cyber.security.5_enrolments),nrow(cyber.security.6_enrolments),nrow(cyber.security.7_enrolments))
@@ -242,7 +212,8 @@ nrow(cyber.security.3_video.stats)
 ```
 There are 13 rows for each column. This tells us that there are 13 different videos at different steps throughout the complete course for our data.
 
-###DATA QUALITY
+### DATA QUALITY
+
 For the Data files selected, we want to check the quality of the data and verify that it is appropriate for the type of analysis  to perform.
 Checking the type of the data in each columns for any of the enrolments file:
 ```{r echo=FALSE}
@@ -286,15 +257,17 @@ The data quality for our datasets is good for our analysis.
 
 ## DATA PREPARATION
 
-We have decided the Data files to use out of all the data provided to us. From the selected files, we are going to subset data, clean data, make some assumptions and transform the data. Further, modified the data so as to perform our analysis efficiently provided the tools we will use, and to get the most from our analysis.
+We have decided the Data files to use out of all the data provided to us. From the selected files, we subset data, clean data, make some assumptions and transform the data. Further, modify the data so as to perform our analysis efficiently, given the tools we will use, and to get the most productivity from our analysis.
 
-* PREPARATION FOR ENROLMENT SET (7 files):
+### PREPARATION FOR ENROLMENT SET (7 files):
+
  + Selecting Data - To analyse the number of enrollments across all the 7 Cohorts. We require the distinct learner IDs in each of the 7 data sheets. Present in the first column, we extract all the learner ids from the 7 cohorts' data.
  + Constructing Data -  Replace the value of all distinct learner ids with the value 'course set i' , where i will be the respective cohort of the learnerId.
  + Integrating Data - Merge the total number of all the Learner IDs(whose original value has been replaced with 'course set i) into one data frame. Our set will contain the sum of all rows from all 7 datasets with values like course set 1, course set 2 etc.
  This is done to be used to create a bar chart.
  
-* PREPARATION FOR ENROLMENT SET for detected_country column (7 files):
+### PREPARATION FOR ENROLMENT SET FOR DETECTED COUNTRY COLUMN (7 files):
+
  + Selecting Data - To analyse the number of countries across all the 7 Cohorts. We select the detected_country column from all of our 7 Data sets.
  + Clean Data - As observed in one of our dataset, NULL values in some cells are present, we remove all those cells. 
  + Formatting Data - The detected_country column has values in the country code format (eg. UK for United Kingdom). We use the coutrycode package and convert the codes into the full country name.
@@ -303,13 +276,14 @@ We have decided the Data files to use out of all the data provided to us. From t
   The data is formatted and this country code is not found, hence, ignored.
   + Filtering Data - We observed a large number of countries and each of those have some viewership. Hence, to focus on the countries with greater viewership, we extract those with number of enrollments greater than 20.
   
-* PREPARATION FOR Video.set data set for number of views analysis(1 file):
+### PREPARATION FOR Video.set FOR NUMBER OF VIEWS ANALYSIS (1 file):
+
  + Selecting Data - To analyse the different videos and their number of views, downloads etc, we extracted the 3rd to 7th column and the 1st column for indexing
 ```{r echo=FALSE}
 (colnames(Extracted.video3))
 ```
 
-* PREPARATION FOR Video.set dataset for device views analysis(1 file):
+### PREPARATION FOR Video.set FOR DEVICE BASED VIEWING ANALYSIS (1 file):
  
   + Selecting Data - To analyse the the percentage views across different devices, we extracted the 16th to 21st row.
   
@@ -317,9 +291,9 @@ We have decided the Data files to use out of all the data provided to us. From t
 
 ## MODELING
 
-#### Modeling Techniques
+#### Modeling Techniques \
 
-The different modeling techniques for our 4 types of analysis are as follows:
+The different modeling techniques for our 4 types of analysis are as follows:\
 1) Distribution of Enrollments count across Cohorts:
 Using modified data from the 7 enrolment dataset, generate a barchart to visualize the count.
 
@@ -335,7 +309,7 @@ Using column means to detect the different percentages
 
 ### MODEL1
 #### BAR chart for our analysis
-```{r,fig.align='center', echo=FALSE}
+```{r,fig.align='center',fig.width==7, echo=FALSE}
 knitr::opts_chunk$set(fig.align = 'left')
 gcohorts
 ```
@@ -352,23 +326,17 @@ This model satisfies our data mining task to compare the various strengths in th
 Verified the number of distinct countries in each cohort that have only those countries that are enrollments of more than 20 learners.
 
 ```{r echo=FALSE}
-(uniquec1=count(unique(first_cohort)))
-(uniquec2=count(unique(second_cohort)))
-(uniquec3=count(unique(third_cohort)))
-(uniquec4=count(unique(fourth_cohort)))
-(uniquec5=count(unique(fifth_cohort)))
-(uniquec6=count(unique(sixth_cohort)))
-(uniquec7=count(unique(seventh_cohort)))
-
+champ=c(count(unique(first_cohort)),count(unique(second_cohort)),count(unique(third_cohort)),count(unique(fourth_cohort)),count(unique(fifth_cohort)),count(unique(sixth_cohort)),count(unique(seventh_cohort)))
+champ
 ```
-The number of countries for each is similar, we will visualize using the list of countries from the first 3 cohorts.
+The number of countries for each is different, but, we will visualize using the list of countries from the first 3 cohorts as sample.\
 
 ### Inverted BAR chart
 
-```{r,fig.align='center', echo=FALSE}
+```{r,fig.align='center',fig.height=8, echo=FALSE}
 Final_gg_country
 ```
-This model displays us the range of various number of enrollment based on the country. Using colors, the distinction is quite easily visible even for the countries with similar enrollment number. 
+This model displays the range of various number of enrollments based on the country. Using colors, the distinction is quite easily visible even for the countries with similar enrollment number. 
 It is an essential model based on demographics that can be analytically used for making decisions.
 United Kingdom is the nation that has the majority of enrollments.
 
@@ -401,7 +369,7 @@ Further, finding the video with maximum views by its title name.
 ```{r echo=FALSE}
 question.title.max
 ```
-The above results will help us analyse what types of videos are most preferred by students
+The above results will help us analyse what type of videos is most preferred by students.
 
 
 #### Scatter-Plot graph of Total views vs Total Downloads
@@ -424,38 +392,33 @@ means.devices
 We use these as a measure to determine which of the devices should be focused on and which ones can be completely neglected.
 
 
-### We can draw a conclusion that the models we have used above are all accurate and good fit for our analysis.
+#### We can draw a conclusion that the models we have used above are all accurate and good fit for our analysis.
 
-## EVALUATION
+### EVALUATION
 
 Sequentially, we will evaluate our models.
 
-1)Enrollment number in 7 cohorts:
+1)Enrollment number in 7 cohorts:\
 Our data mining aim was basically to get an idea of the number of enrollments in each of the 7 cohorts. We wanted to get an estimate and the consistency across them. 
 We conclude that the enrollment count is not consistent.
-
-2)Country wise enrollment:
+2)Country wise enrollment:\
 Our model displays the number of enrollments per country in an inverted bar chart. Our data mining aim was to determine demographics that reflect the enrollment count. As from the chart, we can see that the United Kingdom has a vast majority of learners (higher from the second country by alot), that is common across all cohorts.
 In some cases, India leads where as in others, United States leads. However, our concern to determine the majority enrollment countries is satisfied. This can be used to plan places where there is more potential to increase the enrollments or publicize more.
-The existing countries with great number of enrollments are likely to have a further increase and would require more bandwidths.
-
-The one limitation in our model is that we have taken only those countries with more than 20 enrollments, we could miss out some potential countries that might be used for future planning.
-
-3)Videos in the course and related data:
+The existing countries with great number of enrollments are likely to have a further increase and would require more bandwidths.\
+The one limitation in our model is that we have taken only those countries with more than 20 enrollments, we could miss out some potential countries that might be used for future planning.\
+3)Videos in the course and related data:\
 A pair wise plot is generated, displays the relationship among variables i.e. video duration, total views, total downloads, total caption views, total transcript views. There is a strong linear relationship between total views and downloads, total downloads and total transcript views, total transcript views and total views.
 The rest of the variables are not related, mostly show random behaviour.
 One of our expectation is to provide statistical inferences to determine which of the types of videos have maximum views, what is the length of their duration and other factors.
-Based on the analysis, future planning would be done on what to include in a video, what length should it be etc. 
-Our video with maximum views is: " 1.1 Welcome to the course. " with duration: 99 minutes. (assumed )
-
-The flaw in our model is that it consists of only 1 sample of the video stats out of the 5 datasets given to us. Mostly consistent, but some discrepancy could still arise.
-
-4)Devices used for watching Videos:
+Based on the analysis, future planning would be done on what to include in a video, what length should it be etc.\
+Our video with maximum views is: " 1.1 Welcome to the course. " with duration: 99 minutes. (assumed)\
+The flaw in our model is that it consists of only 1 sample of the video stats out of the 5 datasets given to us. Mostly consistent, but some discrepancy could still arise.\
+4)Devices used for watching Videos: \
 Across several devices that are used, our model determines on the 'mean' basis which of those have maximum and minimum percentage of viewership.
-As we observe from the entire data, the majority of the enrollers watch on their Desktop,whereas only 1 video was seen by the least percentage on Television (0.06). The viewing for consoles was also less, but it is consistent throughout all the videos. Mobile and tablets also have a fair share of viewing percentage.
+As we observe from the entire data, the majority of the enrollers watch on their Desktop,whereas only 1 video was seen by the least percentage on Television (0.06). The viewing for consoles was also less, but it is consistent throughout all the videos. Mobile and tablets also have a fair share of viewing percentage.\
 Based on our means, we decide which devices to concentrate on more and which ones to neglect altogether.
 
-## Determining next steps
+### Determining next steps
 Based on the assessment results, we concluded that we are satisfied with our project model.
 We Move to the Deployment.
 
@@ -464,6 +427,16 @@ We Move to the Deployment.
 
 The deployment of the project will be done by uploading a .Zip file consisting of all the required files on NESS online portal.
 The necessary files include our complete project Template, version control Logs, Data files used in our project, readme file, Final report and presentation.
+
+The project is made to be easily usable and reproducible on several systems using the following:
+Project Template: All the files are present in the regional directory consisting of necessary codes for analysis.
+RMarkdown (PDF format): The reporting format in Rstudio is used, It is taking outputs from our source code directly, hence, any changes in the data or analysis will be directly visible in the new Rmarkdown report we generate.
+GIT Hub repository: Having online repository of our project consisting of files and our source code 
+
+The Project needs to be downloaded on the client's/evaluator's system by saving it in any of their local Directory, using Rstudio and loading the entire project. The project is run directly via the Rmarkdown file, the packages and libraries that are required will automatically load on any system and the code will run efficiently generating our report consisting of the outputs from our analysis.
+
+
+
 
 
 
