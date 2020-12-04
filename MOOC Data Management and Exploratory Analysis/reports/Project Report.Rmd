@@ -84,9 +84,8 @@ and gathered from reliable resources.\
 
 ## RISKS AND CONTINGENCIES
 
-Due to safety purposes, we pre-define possible risks :
-
-1. The data provided to us is from 2016 to 2018, there is a possibility of it not being reliable based on the analysis we will carry out on it that will be used for future improvement of the course. \
+Due to safety purposes, we pre-define possible risks: \
+1.The data provided to us is from 2016 to 2018, there is a possibility of it not being reliable based on the analysis we will carry out on it that will be used for future improvement of the course. \
 2.Technological risks such as file corruption, data deletion, power outage and entire computer corruption. \
 3.Data quality can be extremely poor and render unreliable, the name of the files determine the sequence number of the cohort but the data within the files could be mismatched. \
 
@@ -116,6 +115,7 @@ The above tasks will be performed using data analysis in R using several Package
 ## TECHNOLOGIES USED
 
 All our tools used are free open-source, making them the best choice. \
+
 ### We will work on the following technologies based on our requirements:
 
 All our tools used are free open-source, making them the best choice.
@@ -293,23 +293,20 @@ We have decided the Data files to use out of all the data provided to us. From t
 
 #### Modeling Techniques \
 
-The different modeling techniques for our 4 types of analysis are as follows:\
+The different modeling techniques for our 4 types of analysis are as follows: \
 1) Distribution of Enrollments count across Cohorts:
-Using modified data from the 7 enrolment dataset, generate a barchart to visualize the count.
-
+Using modified data from the 7 enrolment dataset, generate a barchart to visualize the count. \
 2) Distribution of enrollments based on countries:
-Using modified data from the 7 enrolment dataset, generate a barchart to visualize the maximum viewerships in different countries.
-
+Using modified data from the 7 enrolment dataset, generate a barchart to visualize the maximum viewerships in different countries. \
 3) Count of Videos viewed, downloaded, viewed transcripts based on the step videos:
-Using modified data from video stats 2 data sheet, Generate pair wise plot to check correlation between several variables and a scatter plot for total views vs total downloads.
-
+Using modified data from video stats 2 data sheet, Generate pair wise plot to check correlation between several variables and a scatter plot for total views vs total downloads. \
 4) Percentage of videos viewed across several devices:
 Using column means to detect the different percentages
 
 
 ### MODEL1
 #### BAR chart for our analysis
-```{r,fig.align='center',fig.width==7, echo=FALSE}
+```{r,fig.align='center',fig.width==19, echo=FALSE}
 knitr::opts_chunk$set(fig.align = 'left')
 gcohorts
 ```
@@ -333,7 +330,7 @@ The number of countries for each is different, but, we will visualize using the 
 
 ### Inverted BAR chart
 
-```{r,fig.align='center',fig.height=8, echo=FALSE}
+```{r,fig.align='center',fig.height=9, fig.width=15, echo=FALSE}
 Final_gg_country
 ```
 This model displays the range of various number of enrollments based on the country. Using colors, the distinction is quite easily visible even for the countries with similar enrollment number. 
@@ -400,25 +397,23 @@ Sequentially, we will evaluate our models.
 
 1)Enrollment number in 7 cohorts:\
 Our data mining aim was basically to get an idea of the number of enrollments in each of the 7 cohorts. We wanted to get an estimate and the consistency across them. 
-We conclude that the enrollment count is not consistent.
+We conclude that the enrollment count is not consistent. \
 2)Country wise enrollment:\
-Our model displays the number of enrollments per country in an inverted bar chart. Our data mining aim was to determine demographics that reflect the enrollment count. As from the chart, we can see that the United Kingdom has a vast majority of learners (higher from the second country by alot), that is common across all cohorts.
-In some cases, India leads where as in others, United States leads. However, our concern to determine the majority enrollment countries is satisfied. This can be used to plan places where there is more potential to increase the enrollments or publicize more.
-The existing countries with great number of enrollments are likely to have a further increase and would require more bandwidths.\
+Our model displays the number of enrollments per country in an inverted bar chart. Our data mining aim was to determine demographics that reflect the enrollment count. As from the chart, we can see that the United Kingdom has a vast majority of learners (higher from the second country by alot), that is common across all cohorts. In some cases, India leads where as in others, United States leads. However, our concern to determine the majority enrollment countries is satisfied. This can be used to plan places where there is more potential to increase the enrollments or publicize more. The existing countries with great number of enrollments are likely to have a further increase and would require more bandwidths. \
 The one limitation in our model is that we have taken only those countries with more than 20 enrollments, we could miss out some potential countries that might be used for future planning.\
 3)Videos in the course and related data:\
 A pair wise plot is generated, displays the relationship among variables i.e. video duration, total views, total downloads, total caption views, total transcript views. There is a strong linear relationship between total views and downloads, total downloads and total transcript views, total transcript views and total views.
-The rest of the variables are not related, mostly show random behaviour.
+The rest of the variables are not related, mostly show random behaviour. \
 One of our expectation is to provide statistical inferences to determine which of the types of videos have maximum views, what is the length of their duration and other factors.
 Based on the analysis, future planning would be done on what to include in a video, what length should it be etc.\
-Our video with maximum views is: " 1.1 Welcome to the course. " with duration: 99 minutes. (assumed)\
-The flaw in our model is that it consists of only 1 sample of the video stats out of the 5 datasets given to us. Mostly consistent, but some discrepancy could still arise.\
+Our video with maximum views is: " 1.1 Welcome to the course. " with duration: 99 minutes. (assumed) \
+The flaw in our model is that it consists of only 1 sample of the video stats out of the 5 datasets given to us. Mostly consistent, but some discrepancy could still arise. \
 4)Devices used for watching Videos: \
-Across several devices that are used, our model determines on the 'mean' basis which of those have maximum and minimum percentage of viewership.
-As we observe from the entire data, the majority of the enrollers watch on their Desktop,whereas only 1 video was seen by the least percentage on Television (0.06). The viewing for consoles was also less, but it is consistent throughout all the videos. Mobile and tablets also have a fair share of viewing percentage.\
+Across several devices that are used, our model determines on the 'mean' basis which of those have maximum and minimum percentage of viewership. \
+As we observe from the entire data, the majority of the enrollers watch on their Desktop,whereas only 1 video was seen by the least percentage on Television (0.06). The viewing for consoles was also less, but it is consistent throughout all the videos. Mobile and tablets also have a fair share of viewing percentage. \
 Based on our means, we decide which devices to concentrate on more and which ones to neglect altogether.
 
-### Determining next steps
+#### Determining next steps
 Based on the assessment results, we concluded that we are satisfied with our project model.
 We Move to the Deployment.
 
@@ -433,7 +428,8 @@ Project Template: All the files are present in the regional directory consisting
 RMarkdown (PDF format): The reporting format in Rstudio is used, It is taking outputs from our source code directly, hence, any changes in the data or analysis will be directly visible in the new Rmarkdown report we generate.
 GIT Hub repository: Having online repository of our project consisting of files and our source code 
 
-The Project needs to be downloaded on the client's/evaluator's system by saving it in any of their local Directory, using Rstudio and loading the entire project. The project is run directly via the Rmarkdown file, the packages and libraries that are required will automatically load on any system and the code will run efficiently generating our report consisting of the outputs from our analysis.
+The Project needs to be downloaded on the client's/evaluator's system by saving it in any of their local Directory, using Rstudio and loading the entire project. The project is run directly via the Rmarkdown file, the packages and libraries that are required will automatically load on any system and the code will run efficiently generating our report consisting of the outputs from our analysis.\
+The report will be saved in the report file inside the project file directory.
 
 
 
