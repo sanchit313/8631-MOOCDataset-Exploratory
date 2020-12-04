@@ -27,3 +27,13 @@ mainfile.row=cyber.security.3_video.stats[row_min,]
 question.title.min=mainfile.row$title
 question.title.min
 
+#data pre-processing for the 3rd cohorts Video Stats dataset for DEVICEs percentage
+
+Extracted.video3.devices=cyber.security.3_video.stats[c(1,16:21)]
+dim(Extracted.video3.devices)
+#changing from 1 to 13 steps for which video data is present
+Extracted.video3.devices$step_position=1:13
+#no null or empty sets
+#extract removing the Index
+video.sets.devices=Extracted.video3.devices[,-1]
+

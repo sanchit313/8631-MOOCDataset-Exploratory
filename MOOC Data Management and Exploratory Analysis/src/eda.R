@@ -72,3 +72,11 @@ question.title.min=mainfile.row$title
 scatt.vid=ggplot(data=video.sets.counts) + geom_point(aes(x=total_views , y=total_downloads),color="red") + labs(title = "Cohort3 Video Stats : Downloads vs Views Scatter plot")
 
 
+#Check video stats devices
+
+ch1.devices=head(Extracted.video3.devices)
+means.devices=colMeans(Extracted.video3.devices[,-1])
+
+
+
+

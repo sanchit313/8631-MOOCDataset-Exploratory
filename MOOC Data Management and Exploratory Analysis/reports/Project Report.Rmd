@@ -82,7 +82,7 @@ For our end of the analysis, we require following available resources:
 
 ## ASSUMPTIONS
 
-We will make a set of assumptions based on our Application area and its
+A set of assumptions based on our Application area and its
 Datasets as summarized below:
 
 1. The visual display of the interface for the cyber security course is totally
@@ -197,9 +197,9 @@ As defined earlier, our goal for counting number of enrollments across 7 cohorts
 For our task of assessing videos viewership, we will use 1 of the video stats file i.e. for the 3rd cohort We manually observed that the Video statistics for the first 2 cohorts are unavailable, and as for the remaining 5, the data is nearly the same for all cohorts.
 Hence, on a random basis, we will stick to using the video.stats file for the 3rd Cohort.
 
-Using copy-paste, we will load our 7 enrolment files and1 cyber.security.3_video-stats  by saving them in the 'Data' Folder of our Project Template.
+Using copy-paste, we load our 7 enrolment files and 1 cyber.security.3_video-stats  by saving them in the 'Data' Folder of our Project Template.
 
-We will check the columns of one of the enrolment files as below:
+Checking the columns of one of the enrolment files as below:
 ```{r}
 colnames(cyber.security.1_enrolments)
 ```
@@ -209,8 +209,8 @@ We will print some rows for detected_country column just to check how the values
 ```{r}
 head(cyber.security.1_enrolments$country)
 ```
-We notice that they are in a country code format, we will be later modifying them as a part of data preparation.
-Most of the remaining columns like gender, age range, employment_status have most values as unknown, hence we will drop them from our analysis.
+We notice that they are in a country code format, to later modify them as part of data preparation.
+Most of the remaining columns like gender, age range, employment_status have most values as unknown, hence we drop them from our analysis.
 The enrollment dates and un-enrollment dates are present, but our analysis is not focusing on it as the the duration of the course is fixed for all cohorts.
 
 Checking the columns of video.stats file
@@ -220,26 +220,26 @@ colnames(cyber.security.3_video.stats)
 
 There are 28 columns detailing the information of different types of videos.
 
-Our interest is in the relation of the types of video and their lengths compared to their number of views, downloads, transcript views, caption views. The other set we will be using is of the columns that give the percentage of viewership across different sets of devices(television, laptop etc). We will drop the remaining columns deemed unnecessary for our analysis.
+Our interest is in the relation of the types of video and their lengths compared to their number of views, downloads, transcript views, caption views. The other set we will be using is of the columns that give the percentage of viewership across different sets of devices(television, laptop etc). We drop the remaining columns deemed unnecessary for our analysis.
 
 
 #### EXPLORE DATA
-For doing some basic exploration for our data, we will calculate the number of rows in all our enrollment files.
+For doing some basic exploration for our data, we calculate the number of rows in all our enrollment files.
 ```{r}
 c=c(nrow(cyber.security.1_enrolments),nrow(cyber.security.2_enrolments),nrow(cyber.security.3_enrolments),nrow(cyber.security.4_enrolments),nrow(cyber.security.5_enrolments),nrow(cyber.security.6_enrolments),nrow(cyber.security.7_enrolments))
 c
 ```
 The first cohort has a large number of enrollments, whereas the second has around 6000 enrollments, but the remaining 5 have even half of that.
-We find out that the enrollments are not consistent for all the 7 cohorts.
+The enrollments are not consistent for all the 7 cohorts.
 
 Calculating the Rows for the video stats file
 ```{r}
 nrow(cyber.security.3_video.stats)
 ```
-There are 13 rows for each column. This tells us that there are 13 different videos at different steps throughout the complete course for which we have the data.
+There are 13 rows for each column. This tells us that there are 13 different videos at different steps throughout the complete course for our data.
 
 ###DATA QUALITY
-For the Data files we have selected , we want to check the quality of the data and verify that it is appropriate for the type of analysis we will perform.
+For the Data files selected, we want to check the quality of the data and verify that it is appropriate for the type of analysis  to perform.
 Checking the type of the data in each columns for any of the enrolments file:
 ```{r echo=FALSE}
 typeall.enroll2=c()
@@ -262,7 +262,7 @@ typeall.video
 ```
 From the above, we conclude that the column values are in appropriate format,i.e integer or numeric, to carry out our analysis.Also, the video name is in character format, as expected.
 
-We will check for any null values in the video sets, and in the detected_country column for any one of the enrolment set.
+We check for any null values in the video sets, and in the detected_country column for any one of the enrolment set.
 ```{r echo=FALSE}
 T1=(apply(cyber.security.3_video.stats, 2, function(x) any(is.na(x))))
 null1=length(T1[T1== TRUE])
@@ -275,26 +275,65 @@ null2
 print("There are 11 NULL in enrolment data")
 
 ```
-We will ignore the NULL in the countries as compared to over 3000 enrollments in each set, they will have negligible impact.
+We remove the NULL in the countries in data preparation.
 
 The data quality for our datasets is good for our analysis.
 
 
 ## DATA PREPARATION
 
+We have decided the Data files to use out of all the data provided to us. From the selected files, we are going to subset data, clean data, make some assumptions and transform the data. Further, modified the data so as to perform our analysis efficiently provided the tools we will use, and to get the most from our analysis.
+
+* PREPARATION FOR ENROLMENT SET (7 files):
+ + Selecting Data - To analyse the number of enrollments across all the 7 Cohorts. We require the distinct learner IDs in each of the 7 data sheets. Present in the first column, we extract all the learner ids from the 7 cohorts' data.
+ + Constructing Data -  Replace the value of all distinct learner ids with the value 'course set i' , where i will be the respective cohort of the learnerId.
+ + Integrating Data - Merge the total number of all the Learner IDs(whose original value has been replaced with 'course set i) into one data frame. Our set will contain the sum of all rows from all 7 datasets with values like course set 1, course set 2 etc.
+ This is done to be used to create a bar chart.
+ 
+* PREPARATION FOR ENROLMENT SET for detected_country column (7 files):
+ + Selecting Data - To analyse the number of countries across all the 7 Cohorts. We select the detected_country column from all of our 7 Data sets.
+ + Clean Data - As observed in one of our dataset, NULL values in some cells are present, we remove all those cells. 
+ + Formatting Data - The detected_country column has values in the country code format (eg. UK for United Kingdom). We use the coutrycode package and convert the codes into the full country name.
+ Note: Observed error : 'In countrycode(country_new, "ecb", "country.name")
+  Some values were not matched unambiguously: PS'.
+  The data is formatted and this country code is not found, hence, ignored.
+  + Filtering Data - We observed a large number of countries and each of those have some viewership. Hence, to focus on the countries with greater viewership, we extract those with number of enrollments greater than 20.
+  
+* PREPARATION FOR Video.set data set for number of views analysis(1 file):
+ + Selecting Data - To analyse the different videos and their number of views, downloads etc, we extracted the 3rd to 7th column and the 1st column for indexing
+```{r echo=FALSE}
+(colnames(Extracted.video3))
+```
+
+* PREPARATION FOR Video.set dataset for device views analysis(1 file):
+ 
+  + Selecting Data - To analyse the the percentage views across different devices, we extracted the 16th to 21st row.
+  
+
+
+## MODELING
+
+#### Modeling Techniques
+
+The different modeling techniques for our 4 types of analysis are as follows:
+1) Distribution of Enrollments count across Cohorts:
+Using modified data from the 7 enrolment dataset, generate a barchart to visualize the count.
+
+2) Distribution of enrollments based on countries:
+Using modified data from the 7 enrolment dataset, generate a barchart to visualize the maximum viewerships in different countries.
+
+3) Count of Videos viewed, downloaded, viewed transcripts based on the step videos:
+Using modified data from video stats 2 data sheet, Generate pair wise plot to check correlation between several variables and a scatter plot for total views vs total downloads.
+
+4) Percentage of videos viewed across several devices:
+Using column means to detect the different percentages
+
+
+### MODEL1
 
 
 
 
-
-
-
-
-
-
-
-##### In countrycode(country_new, "ecb", "country.name") :
-  Some values were not matched unambiguously: PS
 
 
 ```{r}
