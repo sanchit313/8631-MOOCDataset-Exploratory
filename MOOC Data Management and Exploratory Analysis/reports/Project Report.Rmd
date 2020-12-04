@@ -98,6 +98,8 @@ incomplete information provided, hence, can be discarded.
 4. We are assuming that all of the information is accurate, with minumum discrepancy 
 and gathered from reliable resources.
 
+5. The length unit of the videos is not explicitly mentioned in the video sets, we will take them as minutes.
+
 ## RISKS AND CONTINGENCIES
 
 Due to safety purposes, we pre-define possible risks :
@@ -147,6 +149,7 @@ All our tools used are free open-source, making them the best choice.
 ### We will work on the following technologies based on our requirements:
 
 All our tools used are free open-source, making them the best choice.
+
 #### 1)Microsoft Excel 
 It is best for when the first time we receive the data, we can get the sense of how much of data is provided to us and what is it basically about. The files we have been provided are in .csv format, for which Excel does a really great job in separating into columns and rows.
 
@@ -277,7 +280,7 @@ print("There are 11 NULL in enrolment data")
 
 ```
 We remove the NULL in the countries in data preparation.
-
+The duration/length of video is assumed to be in minutes.
 The data quality for our datasets is good for our analysis.
 
 
@@ -359,6 +362,7 @@ Verified the number of distinct countries in each cohort that have only those co
 
 ```
 The number of countries for each is similar, we will visualize using the list of countries from the first 3 cohorts.
+
 ### Inverted BAR chart
 
 ```{r,fig.align='center', echo=FALSE}
@@ -366,7 +370,7 @@ Final_gg_country
 ```
 This model displays us the range of various number of enrollment based on the country. Using colors, the distinction is quite easily visible even for the countries with similar enrollment number. 
 It is an essential model based on demographics that can be analytically used for making decisions.
-
+United Kingdom is the nation that has the majority of enrollments.
 
 ### MODEL3
 
@@ -393,10 +397,9 @@ cor1.view
 
 The above models give us enough information on the variables and their relationship to each other and the different types of videos.
 
-Further, finding the video with maximum views and minimum views by their title names.
+Further, finding the video with maximum views by its title name.
 ```{r echo=FALSE}
 question.title.max
-question.title.min
 ```
 The above results will help us analyse what types of videos are most preferred by students
 
@@ -419,6 +422,49 @@ We find out the means for each of the device
 means.devices
 ```
 We use these as a measure to determine which of the devices should be focused on and which ones can be completely neglected.
+
+
+### We can draw a conclusion that the models we have used above are all accurate and good fit for our analysis.
+
+## EVALUATION
+
+Sequentially, we will evaluate our models.
+
+1)Enrollment number in 7 cohorts:
+Our data mining aim was basically to get an idea of the number of enrollments in each of the 7 cohorts. We wanted to get an estimate and the consistency across them. 
+We conclude that the enrollment count is not consistent.
+
+2)Country wise enrollment:
+Our model displays the number of enrollments per country in an inverted bar chart. Our data mining aim was to determine demographics that reflect the enrollment count. As from the chart, we can see that the United Kingdom has a vast majority of learners (higher from the second country by alot), that is common across all cohorts.
+In some cases, India leads where as in others, United States leads. However, our concern to determine the majority enrollment countries is satisfied. This can be used to plan places where there is more potential to increase the enrollments or publicize more.
+The existing countries with great number of enrollments are likely to have a further increase and would require more bandwidths.
+
+The one limitation in our model is that we have taken only those countries with more than 20 enrollments, we could miss out some potential countries that might be used for future planning.
+
+3)Videos in the course and related data:
+A pair wise plot is generated, displays the relationship among variables i.e. video duration, total views, total downloads, total caption views, total transcript views. There is a strong linear relationship between total views and downloads, total downloads and total transcript views, total transcript views and total views.
+The rest of the variables are not related, mostly show random behaviour.
+One of our expectation is to provide statistical inferences to determine which of the types of videos have maximum views, what is the length of their duration and other factors.
+Based on the analysis, future planning would be done on what to include in a video, what length should it be etc. 
+Our video with maximum views is: " 1.1 Welcome to the course. " with duration: 99 minutes. (assumed )
+
+The flaw in our model is that it consists of only 1 sample of the video stats out of the 5 datasets given to us. Mostly consistent, but some discrepancy could still arise.
+
+4)Devices used for watching Videos:
+Across several devices that are used, our model determines on the 'mean' basis which of those have maximum and minimum percentage of viewership.
+As we observe from the entire data, the majority of the enrollers watch on their Desktop,whereas only 1 video was seen by the least percentage on Television (0.06). The viewing for consoles was also less, but it is consistent throughout all the videos. Mobile and tablets also have a fair share of viewing percentage.
+Based on our means, we decide which devices to concentrate on more and which ones to neglect altogether.
+
+## Determining next steps
+Based on the assessment results, we concluded that we are satisfied with our project model.
+We Move to the Deployment.
+
+
+## DEPLOYMENT
+
+The deployment of the project will be done by uploading a .Zip file consisting of all the required files on NESS online portal.
+The necessary files include our complete project Template, version control Logs, Data files used in our project, readme file, Final report and presentation.
+
 
 
 
